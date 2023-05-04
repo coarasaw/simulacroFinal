@@ -1,0 +1,24 @@
+<app-menu-gral></app-menu-gral>
+
+<div class="jumbotron">
+    <div class="container">
+        <app-tabla-pelicula [listadoPeliculas]="peliculas" (onPeliculaSelccionada)="mostrarDetallePelicula($event)"></app-tabla-pelicula>  
+    </div>
+    <!-- Mostar los detalles de la pelicula seleccionada -->
+    <div class="container" *ngIf="elent">
+        <!-- Example row of columns -->
+        <div class="row">
+        <div class="col-md-4">
+            <!-- Borrar -->
+            <app-borrar-pelicula  [peliculaDetalle]="peliculaDetalle" (onPeliculaABorrar)="peliculaABorrar($event)"></app-borrar-pelicula>
+        </div>
+        <div class="col-md-4">
+            <!-- Detalle -->
+            <app-detalle-pelicula [peliculaDetalle]="peliculaDetalle" (onPeliculaADetalle)="peliculaAVer($event)"></app-detalle-pelicula>
+        </div>
+        <div class="col-md-4">
+            <!-- Modificar -->
+            <app-modificar-pelicula [peliculaDetalle]="peliculaDetalle" (onPeliculaAModifica)="peliculaAModificar($event)"></app-modificar-pelicula>
+        </div>
+        </div>   
+</div><!-- jumbotronr -->     
